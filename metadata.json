@@ -1,0 +1,127 @@
+{
+	"Name": "mck_0622_1",
+	"GroupName": "SalesOrderId",
+	"SortCardsWith": {
+		"ParameterName": "SalesOrderId",
+		"Operation": "ASC",
+		"Type": "Numeric"
+	},
+	"GatekeeperConfiguration": "AH1_Basic",
+	"Connection": "com.sap.edm.sampleservice.v2",
+	"RefreshInterval": "12:34:00Z",
+	"CustomType": "Query",
+	"AppLaunchUrl": "www.baidu.com",
+	"UrlMatch": null,
+	"Descriptions": [
+		{
+			"language": "EN",
+			"text": "Show orders 0622"
+		}
+	],
+	"QueryInterval": "P9DT3H4M",
+	"QueryURL": "/SalesOrderHeaders?$top=3&$expand=CustomerDetails",
+	"QueryConfiguration": {
+		"QueryURLCollectionRoot": "$.d.results",
+		"QueryEntityKeyPaths": [
+			"$.d.__metadata.uri"
+		],
+		"CacheQueryResult": false
+	},
+	"QueryReturnsEntityCollection": true,
+	"NewsEnabled": false,
+	"AutoSubscribe": true,
+	"HiddenSubscription": true,
+	"SubscriptionParameters": [
+		{
+			"name": "A1",
+			"type": "Edm.String",
+			"maxLength": 255,
+			"defaultValue": "aaa",
+			"isKey": true,
+			"nullable": true,
+			"index": "0",
+			"label": [
+				{
+					"language": "EN",
+					"text": "AAA1"
+				}
+			]
+		},
+		{
+			"name": "B1",
+			"type": "Edm.Boolean",
+			"maxLength": 255,
+			"defaultValue": false,
+			"isKey": false,
+			"nullable": false,
+			"label": [
+				{
+					"language": "EN",
+					"text": "BBB1"
+				}
+			]
+		}
+	],
+	"ResourceIdentifiers": [
+		{
+			"ImagePaths": "",
+			"Uri": "",
+			"Order": 0
+		},
+		{
+			"Order": 1,
+			"ImagePaths": null,
+			"Uri": "/SalesOrderItems?$filter=SalesOrderId%20eq%20%27${SalesOrderId}%27&$expand=ProductDetails",
+			"Shared": false
+		},
+		{
+			"Uri": "/SalesOrderItems?$filter=SalesOrderId%20eq%20%27${SalesOrderId}%27&$expand=ProductDetails",
+			"Order": 2
+		}
+	],
+	"Parameters": {
+		"Parameters": [
+			{
+				"Name": "SalesOrderId",
+				"Propagate": false,
+				"ResourceOrderNumber": 0,
+				"Value": "$.d.SalesOrderId",
+				"displayName": "SalesOrderId"
+			},
+			{
+				"Name": "SalesOrderName",
+				"Value": "$.d.SalesOrderName",
+				"ResourceOrderNumber": 0,
+				"Propagate": false
+			}
+		]
+	},
+	"APNSEnabled": true,
+	"NotificationMessages": {
+		"Messages": []
+	},
+	"NotificationRules": [],
+	"ActionConfiguration": {
+		"Category": "0978089F-655F-42BF-AA23-956B4AC99D18",
+		"XCSRFTokenUrl": "",
+		"Actions": []
+	},
+	"CustomRequestProperties": {
+		"RequestHttpMethod": "GET",
+		"RequestBody": "",
+		"RequestHeaders": []
+	},
+	"LastModifiedTag": "\"4a4ebcae03f74ba38e8c8711e749fb09\"",
+	"CardClass": "HtmlTemplate",
+	"SubscribableTo": {
+		"Users": []
+	},
+	"TemplateName": "User defined template",
+	"Locked": false,
+	"changedNotification": "",
+	"newNotification": "",
+	"SubscribableToValidationEnabled": false,
+	"templateName": "User defined template",
+	"showDataPanel": false,
+	"DescriptionEnglish": "Show orders 0622"
+}
